@@ -1,10 +1,6 @@
 # 🍲 Django Recipes - Full Stack Web App + API
 
 Sistema de receitas desenvolvido com Django + Django REST Framework, com autenticação via sessão e JWT, CRUD completo e dashboard de usuário.
-## 🌐 Demo ao vivo
-
-👉 https://django-recipes-5jwk.onrender.com
----
 
 ## 🚀 Visão geral
 
