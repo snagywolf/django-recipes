@@ -1,19 +1,19 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
-from ..models import RecipeModels
+from ..models import Recipe
 
 
 
 @login_required
 def dashboard(request):
 
-    drafts = RecipeModels.objects.filter(
+    drafts = Recipe.objects.filter(
         author=request.user,
         is_published=False
     )
 
-    published = RecipeModels.objects.filter(
+    published = Recipe.objects.filter(
         author=request.user,
         is_published=True
     )

@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.contrib import admin
-from .models import RecipeModels
+from .models import Recipe
 
 
-@admin.register(RecipeModels)
+@admin.register(Recipe)
 class RecipeAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'author', 'is_published', 'created_at')
     list_filter = ('is_published', 'created_at')

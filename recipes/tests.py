@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 
-from recipes.models import RecipeModels
+from recipes.models import Recipe
 
 
 class RecipeModelTest(TestCase):
@@ -14,7 +14,7 @@ class RecipeModelTest(TestCase):
         )
 
     def test_recipe_str(self):
-        recipe = RecipeModels(
+        recipe = Recipe(
             title='Pizza',
             description='Teste',
             author=self.user
@@ -26,7 +26,7 @@ class RecipeModelTest(TestCase):
         )
 
     def test_slug_generation(self):
-        recipe = RecipeModels(
+        recipe = Recipe(
             title='Pizza de Calabresa',
             description='Teste',
             author=self.user
@@ -40,7 +40,7 @@ class RecipeModelTest(TestCase):
         )
 
     def test_recipe_default_is_not_published(self):
-        recipe = RecipeModels.objects.create(
+        recipe = Recipe.objects.create(
             title='Lasanha',
             description='Teste',
             author=self.user
