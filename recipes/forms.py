@@ -4,17 +4,14 @@ from django import forms
 from django.contrib.auth.models import User
 
 
-class RecipeForm(forms.ModelForm):
+from django import forms
+from .models import RecipeModels
 
+
+class RecipeForm(forms.ModelForm):
     class Meta:
         model = RecipeModels
-
-        fields = [
-            'title',
-            'description',
-            'image',
-        ]
-
+        fields = ['title', 'description', 'image', 'category']
 
 class RegisterForm(forms.ModelForm):
 

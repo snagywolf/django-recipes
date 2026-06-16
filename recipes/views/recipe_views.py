@@ -9,17 +9,14 @@ from ..forms import RecipeForm
 
 
 def home(request):
-
     query = request.GET.get('q', '').strip()
     category_id = request.GET.get('category')
 
     recipes_list = RecipeModels.objects.filter(is_published=True)
 
-    # 🔥 filtro por categoria
     if category_id:
-        recipes_list = recipes_list.filter(categories__id=category_id)
+        recipes_list = recipes_list.filter(category_id=category_id)
 
-    # 🔍 busca
     if query:
         recipes_list = recipes_list.filter(title__icontains=query)
 
