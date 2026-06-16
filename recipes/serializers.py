@@ -1,15 +1,15 @@
 from rest_framework import serializers
-from .models import RecipeModels
-
-
-
+ 
+from .models import Recipe
+ 
+ 
 class RecipeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = RecipeModels
+        model = Recipe
         fields = '__all__'
         read_only_fields = [
             'author',
             'is_published',
             'created_at',
-            'updated_at'
+            'updated_at',
         ]
