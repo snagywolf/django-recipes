@@ -1,0 +1,23 @@
+{% extends 'recipes/page/base.html' %}
+
+{% block content %}
+
+<div class="col-md-6 mx-auto">
+
+<h3 class="mb-4">Formulário</h3>
+
+<form method="POST" enctype="multipart/form-data" class="card p-3 shadow-sm">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button class="btn btn-success w-100">
+        Salvar
+    </button>
+
+</form>
+
+</div>
+
+{% endblock %}

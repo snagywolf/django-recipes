@@ -1,0 +1,48 @@
+{% extends 'recipes/page/base.html' %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-8">
+
+        {% if recipe.image %}
+            <img src="{{ recipe.image.url }}" class="img-fluid rounded mb-3" style="max-height:400px; object-fit:cover;">
+        {% endif %}
+
+        <h1> Titulo:{{ recipe.title }}</h1>
+
+        <hr>
+
+        <h5>📄 Descrição</h5>
+        <p>{{ recipe.description }}</p>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card p-3 shadow-sm">
+
+            <h5>📊 Informações</h5>
+
+            <hr>
+
+            <p><strong>👤 Autor:</strong> {{ recipe.author }}</p>
+
+            <p><strong>📅 Criado:</strong> {{ recipe.created_at }}</p>
+
+            <p><strong>🔄 Atualizado:</strong> {{ recipe.updated_at }}</p>
+
+            <p><strong>🏷️ Categorias:</strong>
+                {% for cat in recipe.categories.all %}
+                    {{ cat.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
